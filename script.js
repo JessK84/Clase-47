@@ -204,19 +204,17 @@ const findIndex = (numbers, operation)  =>{
 
 // const numbers = [40, 33, 50, 8, 2, 3, 20]
 // const multiploDe10 = x => x % 10 === 0
-// dropWhile(numbers, multiploDe10) // [8, 2, 3, 20]
+// dropWhile(numbers, multiploDe10) // [50, 8, 2, 3, 20]
 
 const dropWhile = (numbers, operation)  =>{
-
-    let result= []
-    for(let number of numbers) {
-        if(!operation(number)){
-           result.push
-        } 
+    let result = []
+    for (let i in numbers) {
+        if (!operation(numbers[i])) {
+            result = numbers.slice(i)
+            return result
+        }
     }
-    return result
 }
-
 
 
 // takeWhile
@@ -229,15 +227,15 @@ const dropWhile = (numbers, operation)  =>{
 // const multiploDe10 = x => x % 10 === 0
 // takeWhile(numbers, multiploDe10) // [40, 50]
 
-// const takeWhile = (numbers, operation)  =>{
-//     let results= []
-//    for(let number of numbers) {
-//         while(operation(number)){
-//             // let result = number
-//              results.push(number)
+const takeWhile = (numbers, operation)  =>{
+    let result = []
+    for (let i in numbers) {
+        if (!operation(numbers[i])) {
+            result = numbers.splice(0, i)
+            return result
+            
+        }
+    }
 
-//         } 
-//     }   
-//     return results
-// }
+}
 

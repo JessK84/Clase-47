@@ -204,7 +204,7 @@ const findIndex = (numbers, operation)  =>{
 
 // const numbers = [40, 33, 50, 8, 2, 3, 20]
 // const multiploDe10 = x => x % 10 === 0
-// dropWhile(numbers, multiploDe10) // [50, 8, 2, 3, 20]
+// dropWhile(numbers, multiploDe10) // [33, 50, 8, 2, 3, 20]
 
 const dropWhile = (numbers, operation)  =>{
     let result = []

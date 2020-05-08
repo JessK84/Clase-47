@@ -25,7 +25,7 @@ describe("filter(numbers, operation)", () => {
         const numbers = [10, 2, 3, 40, 33, 50]
         const result = filter(numbers, multiploDe10)
 
-    expect(result).to.be.eql([10, 40, 50]) // aserción
+        expect(result).to.be.eql([10, 40, 50]) // aserción
     })
 })
 
@@ -116,7 +116,24 @@ describe("findIndex(numbers, operation)", () => {
 })
 
 
+describe("dropWhile(numbers, operation)", () => {
+    it("Debe devolver un array con los elementos resultantes a partir del primer callback que devuelva 'false' a los multiploDe10(numbers, operation)", () => {
+        const numbers = [40, 33, 50, 8, 2, 3, 20]
+        const result = dropWhile(numbers, multiploDe10)
 
+        expect(result).to.be.eql([33, 50, 8, 2, 3, 20])  // aserción
+    })
+})
+
+
+describe("takeWhile(numbers, operation)", () => {
+    it("Debe devolver un array con los elementos 'true' multiploDe10 hasta el primer callback que devolvuelva false(numbers, operation)", () => {
+        const numbers = [40, 330, 50, 8, 2, 3, 20]
+        const result = takeWhile(numbers, multiploDe10)
+
+        expect(result).to.be.eql([40, 330, 50])  // aserción
+    })
+})
 
 
 
